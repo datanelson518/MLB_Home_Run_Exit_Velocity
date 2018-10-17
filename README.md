@@ -23,7 +23,7 @@ From this model I will draw a conclusion about what are the most influential fea
 
 ## Problem Statement
 
-Using the physical data about baseballs, the personal stats from each player (age, height, weight) and the game from each each pitch that was hit for a home run, between the years of 2015 and 2017, I will draw a conclusion about what are the most influential features contributing to a batters home run exit velocity.
+Using the physical data about baseballs, the personal stats from each player (age, height, weight) that hit a home run and the game statistics from each pitch that was hit for a home run, between the years of 2015 and 2017, I will draw a conclusion about the most influential features contributing to a batter’s home run exit velocity.
 
 ---
 
