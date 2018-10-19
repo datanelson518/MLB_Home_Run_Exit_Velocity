@@ -186,7 +186,7 @@ Gradient Boosting looks at these weak models sequentially and trains on the resi
 
 ### Model
 
-From the data I collected from Baseball Savant on pitch information, the data from the sample of baseballs used in the 2015, 2016 and 2017 seasons and the web scrape data of each batters age, height and weight the features I saw that most influenced a batters home run exit velocity relate to the pitch stats, as well as the height and the weight of the player. These two groups made up all of the top 20 most influential features to the Gradient Boost model and provided the model the necessary information it needed to be as accurate as it was in predicting.
+From the data I collected from Baseball Savant on pitch information, the data from the sample of baseballs used in the 2015, 2016 and 2017 seasons and the web scrape data of each batters age, height and weight the features I saw that most influenced a batters home run exit velocity relate to the pitch stats, as well as the height and the weight of the player. These two groups made up all of the top 20 most influential features to the Gradient Boost model and provided the model the necessary information it needed to be as accurate as it was in predicting launch speeds.
 
 As far as the baseballs, I don't see any significant evidence that the ball has any affect on a batters launch speed. The most important baseball features carried the following weights in the model:
 
