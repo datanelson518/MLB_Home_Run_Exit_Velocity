@@ -33,7 +33,7 @@ From this model I will draw a conclusion about what are the most influential fea
 
 ## Problem Statement
 
-Using the physical data about baseballs, the personal stats from each player (age, height, weight) that hit a home run and the game statistics from each pitch that was hit for a home run, between the years of 2015 and 2017, I will draw a conclusion about the most influential features contributing to a batter’s home run exit velocity.
+Using the physical data about baseballs, the personal stats from each player (age, height, weight) and the game statistics from each pitch that was hit for a home run, between the years of 2015 and 2017, I will draw a conclusion about the most influential features contributing to a batter’s home run exit velocity.
 
 ---
 
@@ -196,7 +196,7 @@ As far as the baseballs, I don't see any significant evidence that the ball has 
 
 ### Next Steps
 
-During EDA I found that there were more Fly Ball home runs were hit in the 2017 season than in the 2015 and 2016 seasons and it was actually significally more Fly Ball home runs than either of the previous two seasons. I would like to review what has triggered batters to adjust to hitting more Fly Ball home runs along with reviewing some research that reviews the drag coefficient of the baseball to determine if the ball is having any affect on the flight after being hit and ultimately leaving the ball park for a home run.
+During EDA I found that there were more Fly Ball home runs hit in the 2017 season than in the 2015 and 2016 seasons and it was actually significantly more Fly Ball home runs than either of the previous two seasons. I would like to review what has triggered batters to adjust to hitting more Fly Ball home runs along with reviewing some research that reviews the drag coefficient of the baseball to determine if the ball is having any affect on the flight after being hit and ultimately leaving the ball park for a home run.
 - https://fivethirtyeight.com/features/in-mlbs-new-home-run-era-its-the-baseballs-that-are-juicing/
 
 <p align="center">
