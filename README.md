@@ -1,12 +1,21 @@
-# Major League Baseball Home Run Exit Velocities
+<h1 align="center">Major League Baseball Home Run Exit Velocities</h1>
+
+---
 
 *Jon Nelson*
 
 ---
 
-## Description
+## Outline
 
-# Major League Baseball Home Run Exit Velocities
+- [Description](#description)
+- [Problem statement](#problem-statement)
+- [File Structure](#file-structure)
+- [Data Dictionary](#data-dictionary)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Modeling](#production-modeling)
+
+## Description
 
 One of the most recent debates in Major League Baseball is focused on why more home runs were hit in the 2017 season than any other season in the leagues history. There were 6,105 home runs hit in the 2017 season, which is more home runs than in the peak of the steroid era and everyone wants to know why. One specific area of interest for investigation is related to the most important item to the game, the baseball. During the 2017 season there were numerous complaints from major league pitchers that the ball felt different and the result was a record breaking year for home runs.
 
@@ -24,6 +33,17 @@ From this model I will draw a conclusion about what are the most influential fea
 ## Problem Statement
 
 Using the physical data about baseballs, the personal stats from each player (age, height, weight) that hit a home run and the game statistics from each pitch that was hit for a home run, between the years of 2015 and 2017, I will draw a conclusion about the most influential features contributing to a batter’s home run exit velocity.
+
+---
+
+## File Structure
+
+- <a href="data">data</a>
+- <a href="notebooks">notebooks</a>
+- <a href="pickles">pickles</a>
+- <a href="plots">plots</a>
+- <a href="presentation">presentation</a>
+- [README.md](./README.md)
 
 ---
 
@@ -83,3 +103,106 @@ Using the physical data about baseballs, the personal stats from each player (ag
   - `zone`: the location of the pitch as is crossed home plate according to the mapped areas of the batters zone box (1 - 14).
   - `plate_x`: strike zone coordinate x
   - `plate_z`: strike zone coordinate z
+
+  ---
+
+## Exploratory Data Analysis
+
+Exploring home run data to identify relationships and trends that can help explain what is contributing to a batters home run exit velocity.
+
+### Exploration of Distributions by Year
+
+I am focused on understanding what is influencing Home Run Exit velocities to find insights into what is causing an increase in home runs so I want to review the differences in launch speeds, launch angles and hit distances by year.
+
+#### Launch Speeds
+
+The 2015 season looks to have a much longer tail to the left hand side meaning there were some much slower home velocities in that year compared to the 2016 and 2017 season. The 2016 and 2017 seasons distributions look almost identical with the main difference being the fact that in 2017 we saw a record breaking number of home runs so there are more observations to show in the distribution.
+
+<p align="center">
+  <img width="700" height="400" src="plots/subplots_speed_by_year.png">
+</p>
+
+#### Launch Angles
+
+The launch angles between seasons is pretty consistent but one thing I am noticing is that there is a large increase in home runs that were between the angles of 25 and 50. Meaning that more "Fly Ball" home runs are being hit (more on this later).
+
+- Batted Ball Type by Launch Angle:
+    - Ground ball: Less than 10 degrees
+    - Line drive: 10-25 degrees
+    - Fly ball: 25-50 degrees
+    - Pop up: Greater than 50 degrees
+
+<p align="center">
+  <img width="700" height="400" src="plots/subplots_angle_by_year.png">
+</p>
+
+#### Home Run Distances
+
+What shows itself immediately as far as home run distances is the fact that in the 2017 and 2016 seasons the batters are consistently hitting home runs further on average at around 400ft compared to the 2015 season which has more spread across 375ft to 425ft.
+
+<p align="center">
+  <img width="700" height="400" src="plots/home_run_distance_season_subplot.png">
+</p>
+
+---
+
+## Production Modeling
+
+### GridSeach with GradientBoostRegressor
+
+#### GridSearchCV
+
+GridSearchCV is a technique that searches for the optimal hyper-parameters provided during the instantiating of the GridSearchCV model. Using its built in cross validation it can search over the grid of the provided hyperparameters to evaluate the performance of each and then use the parameter(s) it found to be the best when making the predictions.
+
+#### Gradient Boost
+
+When boosting a model the model is building multiple simple models and learning from these models to be more approximate when predicting. These simple models are referred to as weak model or weak learners.
+
+Gradient Boosting looks at these weak models sequentially and trains on the residuals or errors in order to give more importance to the less accurate predictions and once completed uses what was learned from these predictions to combine with the strong predictions to have a better overall approximation.
+
+#### Gradient Boost Scores
+
+|Train Score |Test Score |
+|------------|-----------|
+|   0.68038  |  0.61657  |
+
+
+##### Interpretations
+
+1. The train data explained variance (R2) means, 68% of the variations in the predicted launch speeds can be explained by the feature variables within the model.
+2. The test data explained variance (R2) means, 61% of the variations in the predicted launch speeds can be explained by the feature variables within the model.
+3. Overall, this model is still over fit but the percentage of explained variance is the best I've seen amongst all models.
+
+#### Gradient Boost predictions
+
+<p align="center">
+  <img width="700" height="400" src="plots/gbr_model_predictions.png">
+</p>
+
+---
+
+## Conclusions and Next Steps
+
+### Model
+
+From the data I collected from Baseball Savant on pitch information, the data from the sample of baseballs used in the 2015, 2016 and 2017 seasons and the web scrape data of each batters age, height and weight the features I saw that most influenced a batters home run exit velocity relate to the pitch stats, as well as the height and the weight of the player. These two groups made up all of the top 20 most influential features to the Gradient Boost model and provided the model the necessary information it needed to be as accurate as it was in predicting.
+
+As far as the baseballs, I don't see any significant evidence that the ball has any affect on a batters launch speed. The most important baseball features carried the following weights in the model:
+- Avg CCOR: 0.001344
+- Avg DS: 0.003617
+- Weight: 0.0
+
+### Next Steps
+
+During EDA I found that there were more Fly Ball home runs were hit in the 2017 season than in the 2015 and 2016 seasons and it was actually significally more Fly Ball home runs than either of the previous two seasons. I would like to review what has triggered batters to adjust to hitting more Fly Ball home runs along with reviewing some research that reviews the drag coefficient of the baseball to determine if the ball is having any affect on the flight after being hit and ultimately leaving the ball park for a home run.
+- https://fivethirtyeight.com/features/in-mlbs-new-home-run-era-its-the-baseballs-that-are-juicing/
+
+<p align="center">
+  <img width="700" height="400" src="plots/bb_type_by_year.png">
+</p>
+
+Another area I would like to build on is adding more pitches to my data to analyze launch speeds for non home run hits to understand what kind of speeds are being obtained for the same types of pitches that are not hit for home runs.
+
+---
+
+# Executive Summary
