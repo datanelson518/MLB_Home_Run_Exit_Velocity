@@ -13,7 +13,8 @@
 - [File Structure](#file-structure)
 - [Data Dictionary](#data-dictionary)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
-- [Modeling](#production-modeling)
+- [Production Modeling](#production-modeling)
+- [Conclusions and Next Steps](#Conclusions-and-next-steps)
 
 ## Description
 
@@ -188,9 +189,10 @@ Gradient Boosting looks at these weak models sequentially and trains on the resi
 From the data I collected from Baseball Savant on pitch information, the data from the sample of baseballs used in the 2015, 2016 and 2017 seasons and the web scrape data of each batters age, height and weight the features I saw that most influenced a batters home run exit velocity relate to the pitch stats, as well as the height and the weight of the player. These two groups made up all of the top 20 most influential features to the Gradient Boost model and provided the model the necessary information it needed to be as accurate as it was in predicting.
 
 As far as the baseballs, I don't see any significant evidence that the ball has any affect on a batters launch speed. The most important baseball features carried the following weights in the model:
-- Avg CCOR: 0.001344
-- Avg DS: 0.003617
-- Weight: 0.0
+
+| Avg CCOR   | Avg DS    | Weight   |
+|------------|-----------|----------|
+|  0.001344  | 0.003617  |   0.0    |
 
 ### Next Steps
 
@@ -201,8 +203,4 @@ During EDA I found that there were more Fly Ball home runs were hit in the 2017 
   <img width="700" height="400" src="plots/bb_type_by_year.png">
 </p>
 
-Another area I would like to build on is adding more pitches to my data to analyze launch speeds for non home run hits to understand what kind of speeds are being obtained for the same types of pitches that are not hit for home runs.
-
----
-
-# Executive Summary
+Another area I would like to build on is adding more pitch observations to my data in order to analyze pitches that are not hit for home runs. I think that this would provide additional insights into the types of pitches that batters are able to hit out of the park on a regular basis. This would also provide additional examples to be examined related to batted ball types (Fly Balls or Line Drives) to continue to build on the idea that batters are adjusting their swings in order to hit more Fly Balls.
