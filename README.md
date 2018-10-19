@@ -177,7 +177,7 @@ Gradient Boosting looks at these weak models sequentially and trains on the resi
 #### Gradient Boost predictions
 
 <p align="center">
-  <img width="700" height="700" src="plots/gbr_model_predictions.png">
+  <img width="700" height="400" src="plots/gbr_model_predictions.png">
 </p>
 
 ---
@@ -200,7 +200,7 @@ During EDA I found that there were more Fly Ball home runs were hit in the 2017 
 - https://fivethirtyeight.com/features/in-mlbs-new-home-run-era-its-the-baseballs-that-are-juicing/
 
 <p align="center">
-  <img width="700" height="700" src="plots/bb_type_by_year.png">
+  <img width="700" height="400" src="plots/bb_type_by_year.png">
 </p>
 
 Another area I would like to build on is adding more pitch observations to my data in order to analyze pitches that are not hit for home runs. I think that this would provide additional insights into the types of pitches that batters are able to hit out of the park on a regular basis. This would also provide additional examples to be examined related to batted ball types (Fly Balls or Line Drives) to continue to build on the idea that batters are adjusting their swings in order to hit more Fly Balls.
