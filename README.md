@@ -120,7 +120,7 @@ I am focused on understanding what is influencing Home Run Exit velocities to fi
 The 2015 season looks to have a much longer tail to the left hand side meaning there were some much slower home velocities in that year compared to the 2016 and 2017 season. The 2016 and 2017 seasons distributions look almost identical with the main difference being the fact that in 2017 we saw a record breaking number of home runs so there are more observations to show in the distribution.
 
 <p align="center">
-  <img width="700" height="400" src="plots/subplots_speed_by_year.png">
+  <img width="700" height="700" src="plots/subplots_speed_by_year.png">
 </p>
 
 #### Launch Angles
