@@ -50,7 +50,8 @@ Using the physical data about baseballs, the personal stats from each player (ag
 
 ---
 
-**Pitch Features**
+#### Pitch Features
+
   - `pitch_type`: The type of pitch that was thrown and hit for a home run
       - `CH : Changeup`
       - `CU : Curveball`
@@ -81,14 +82,18 @@ Using the physical data about baseballs, the personal stats from each player (ag
   - `release_pos_y`: the release coordinates in three dimensions, measure at the initial release point.
   - `release_pos_x`: the release coordinates in three dimensions, measure at the initial release point.
   - `release_pos_z`: the release coordinates in three dimensions, measure at the initial release point.
-**MLB Features**
+
+#### MLB Features
+
   - `game_year`: the season the home run hit occurred (2015, 2016 and 2017).
   - `weight_(oz)`: the weight of the baseballs in oz from each season (2015, 2016 and 2017).
   - `circumference_(in)`: the circumference of the baseballs in inches from each season (2015, 2016 and 2017).
   - `avg_seam_height`: seam height was defined as the average radial distance from the seam to the ear, 3 mm left and right of the seam.
   - `avg_ccor`: cylindrical coefficient of restitution (ccor) is the measurement of the "bounciness" of the baseball and is the core ingredient of "the pill" the middle rubber of the baseball.
   - `avg_ds`: a measure of a ball's hardness. Its measurement is conducted to represent bat-ball impact forces.
-**Batter Features**
+
+#### Batter Features
+
   - `player_name`: the name of the player that hit the home run
   - `height`: the height in inches of the player that hit the home run
   - `weight`: the weight in lbs of the player that hit the home run
